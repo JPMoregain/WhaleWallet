@@ -1,0 +1,28 @@
+.wallet {
+  height: 60%;
+  width: 30%;
+  background-color: gray;
+  word-wrap: break-word;
+}
+
+.tokenTable {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+table {
+  border: 1px solid black;
+}
+
+th {
+  padding: 3px;
+}
+
+td {
+  border: 1px solid black;
+}
+
+#tokenInput {
+  height: 25px;
+  width: 80%;
+}
