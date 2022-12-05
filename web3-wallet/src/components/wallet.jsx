@@ -4,6 +4,7 @@ import '../stylesheets/wallet.css';
 import Header from './Header';
 import History from './History';
 import Tokens from './Tokens';
+import Transfer from './Transfer';
 
 // import variables from .env file
 const address = import.meta.env.VITE_WALLET_ADDRESS;
@@ -157,88 +158,18 @@ function Wallet() {
         ethBalance={ethBalance}
         setPrivateKey={setPrivateKey}
       />
-      <Tokens 
+      <Tokens
         tokenList={tokenList}
         setAddTokenAddress={setAddTokenAddress}
         addToken={addToken}
       />
-      <div className="transfer">
-        <label htmlFor="transferEth">
-          ETH
-          <input
-            type="radio"
-            name="transfer-radio"
-            value="transferEth"
-            id="transferEth"
-            onChange={(e) => {
-              setTransferType(e.target.value);
-            }}
-            defaultChecked
-          />
-        </label>
-        <label htmlFor="transferToken">
-          Token
-          <input
-            type="radio"
-            name="transfer-radio"
-            value="transferToken"
-            id="transferToken"
-            onChange={(e) => {
-              setTransferType(e.target.value);
-            }}
-          />
-        </label>
-        <label htmlFor="transferToken">
-          <br />
-          Token to Send (Address):
-          <br />
-          <input
-            type="text"
-            name="tokenAddressEntry"
-            id="tokenAddressEntry"
-            placeholder="0x...."
-            onChange={(e) => {
-              setTokenAddress(e.target.value);
-            }}
-          />
-        </label>
-        <label htmlFor="recipientAddress">
-          <br />
-          Address to send to:
-          <br />
-          <input
-            type="text"
-            name="recipientAddress"
-            id="recipientAddress"
-            placeholder="0x...."
-            onChange={(e) => {
-              setTransferAddress(e.target.value);
-            }}
-          />
-        </label>
-        <label htmlFor="amountToSend">
-          <br />
-          Amount:
-          <br />
-          <input
-            type="text"
-            name="amountToSend"
-            id="amountToSend"
-            placeholder="E.g., 1.01"
-            onChange={(e) => {
-              setTransferQuantity(e.target.value);
-            }}
-          />
-        </label>
-        <div className="transferBtn">
-          <button
-            type="submit"
-            onClick={() => transfer()}
-          >
-            Send
-          </button>
-        </div>
-      </div>
+      <Transfer
+        setTransferType={setTransferType}
+        setTokenAddress={setTokenAddress}
+        setTransferAddress={setTransferAddress}
+        setTransferQuantity={setTransferQuantity}
+        transfer={transfer}
+      />
       <History
         txHistory={txHistory}
       />

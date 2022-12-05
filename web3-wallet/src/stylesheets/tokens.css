@@ -1,6 +1,10 @@
 .tokenInfo {
   color: black;
-  margin-bottom: 8px;
+  margin: 2.5%;
+  padding: 1%;
+  border: 1px solid black;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0.19);
 }
 
 .tokenInfo table {
@@ -9,4 +13,5 @@
 
 .tokenInfo button {
     margin-top: 5px;
+    width: 15%;
 }
