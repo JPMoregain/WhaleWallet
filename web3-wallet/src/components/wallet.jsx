@@ -154,6 +154,7 @@ function Wallet() {
       <Header
         address={address}
         ethBalance={ethBalance}
+        setPrivateKey={setPrivateKey}
       />
       <div className="body">
         <b>Tokens</b>
