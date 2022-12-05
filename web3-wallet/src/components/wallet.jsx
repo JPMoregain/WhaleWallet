@@ -3,6 +3,7 @@ import Web3 from 'web3';
 import '../stylesheets/wallet.css';
 import Header from './Header';
 import History from './History';
+import Tokens from './Tokens';
 
 // import variables from .env file
 const address = import.meta.env.VITE_WALLET_ADDRESS;
@@ -156,52 +157,11 @@ function Wallet() {
         ethBalance={ethBalance}
         setPrivateKey={setPrivateKey}
       />
-      <div className="body">
-        <b>Tokens</b>
-      </div>
-      <div className="tokenTable">
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Address</th>
-              <th>Balance</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              // map current state of the token list into rows to populate table
-              tokenList.map((token) => (
-                // use tokenNumber to assign unique key
-                <tr key={token.tokenNumber}>
-                  <td>{token.tokenName}</td>
-                  <td>{token.tokenAddress}</td>
-                  <td>{token.tokenBalance}</td>
-                </tr>
-              ))
-            }
-          </tbody>
-        </table>
-      </div>
-      <div>
-        Add Token:
-      </div>
-      <div>
-        <input
-          id="tokenInput"
-          type="text"
-          onChange={(event) => setAddTokenAddress(event.target.value)}
-          placeholder="Enter token address"
-        />
-      </div>
-      <div>
-        <button
-          type="submit"
-          onClick={() => addToken()}
-        >
-          Add Token
-        </button>
-      </div>
+      <Tokens 
+        tokenList={tokenList}
+        setAddTokenAddress={setAddTokenAddress}
+        addToken={addToken}
+      />
       <div className="transfer">
         <label htmlFor="transferEth">
           ETH
@@ -264,6 +224,7 @@ function Wallet() {
             type="text"
             name="amountToSend"
             id="amountToSend"
+            placeholder="E.g., 1.01"
             onChange={(e) => {
               setTransferQuantity(e.target.value);
             }}

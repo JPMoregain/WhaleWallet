@@ -1,0 +1,12 @@
+.tokenInfo {
+  color: black;
+  margin-bottom: 8px;
+}
+
+.tokenInfo table {
+  margin: 8px;
+}
+
+.tokenInfo button {
+    margin-top: 5px;
+}
