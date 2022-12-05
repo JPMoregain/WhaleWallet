@@ -1,9 +1,10 @@
 import React from 'react';
+import '../stylesheets/history.css';
 
 function History({ txHistory }) {
   return (
-    <div className="historyTable">
-      Transaction History
+    <div className="history">
+      <h3>Transaction History</h3>
       <table>
         <thead>
           <tr>

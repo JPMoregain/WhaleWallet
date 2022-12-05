@@ -141,7 +141,7 @@ function Wallet() {
           tokenAddress: tokenAddress || 'ETH',
           amount: transferQuantity,
           // link to transaction info on the explorer
-          txInfo: <a href={txUrl} target="_blank" rel="noreferrer">0x......</a>,
+          txInfo: <a href={txUrl} target="_blank" rel="noreferrer">{hash}</a>,
         };
         // store txInfo objects in local memory since we don't have a db set up
         transactionDB.push(txInfo);

@@ -9,6 +9,11 @@
 
 .tokenInfo table {
   margin: 8px;
+  word-wrap: break-word;
+}
+
+td {
+    padding: 3px;
 }
 
 .tokenInfo button {
