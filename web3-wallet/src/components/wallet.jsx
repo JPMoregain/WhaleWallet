@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
 import '../stylesheets/wallet.css';
 import Header from './Header';
+import History from './History';
 
 // import variables from .env file
 const address = import.meta.env.VITE_WALLET_ADDRESS;
@@ -276,6 +277,9 @@ function Wallet() {
           </button>
         </div>
       </div>
+      <History
+        txHistory={txHistory}
+      />
     </div>
   );
 }
