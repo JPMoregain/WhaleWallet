@@ -11,10 +11,12 @@ Application for monitoring and transferring token balances
 
 ## Configuration
 
-1. Create a local .env file inside the repository root directory
-2. Copy and paste the contents of '.env-Sample' into your .env file
-3. Make sure to replace the placeholder text with your private key and wallet address - more detailed instructions are located in the '.env-Sample' file
+1. Before you run the application, you must replace some placeholder text with your wallet address and private key
+2. Navigate to the Wallet component within the located at web3-wallet\src\components\Wallet.jsx
+3. On line 10, replace 'YOUR WALLET ADDRESS' with your wallet address - do not delete the '', it must still be a string
+4. On line 30, replace 'YOUR PRIVATE KEY' with the private key that corresponds to the wallet address that you entered in step 3 - do not delete the '' - it must still be a string
 
 ## Using the Application
 
 1. Type `npm run dev` and navigate to the address of the dev server in your browser (It should be http://127.0.0.1:5173/)
+2. To run test suite, type `npm run test`
