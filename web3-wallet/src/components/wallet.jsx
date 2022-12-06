@@ -6,11 +6,11 @@ import History from './History';
 import Tokens from './Tokens';
 import Transfer from './Transfer';
 
-// import variables from .env file
-const address = '0x74769e0178aAd435bd2d28856E551381F1d3eD92';
-// const privateKey = import.meta.env.VITE_PRIVATE_KEY;
-const rpcEndpoint =
-  'https://goerli.infura.io/v3/70735029d7234f478304af0dbc77b92d';
+// ** MAKE SURE YOU ENTER YOUR WALLET ADDRESS HERE - REPLACE "YOUR WALLET ADDRESS"
+const address = 'YOUR WALLET ADDRESS';
+// RPC endpoint currently hard coded to goerli testnet - you should be able to switch it to
+// whatever valid RPC you want and the wallet will work
+const rpcEndpoint = 'https://goerli.infura.io/v3/70735029d7234f478304af0dbc77b92d';
 
 // connect to blockchain via infura endpoint
 const web3 = new Web3(new Web3.providers.HttpProvider(rpcEndpoint));
@@ -24,12 +24,10 @@ const tokenDB = [];
 const transactionDB = [];
 
 function Wallet() {
-  // use hooks to hold state, import variables from .env file
   // **DO NOT USE PRIVATE KEY TO WALLET THAT HAS ASSETS - KEY WILL BE EXPOSED ON FRONTEND**
-  // **ONLY DOING IT THIS WAY TO SATISFY REQUIREMENT #1**
-  // Import private key from .env file
+  // **MAKE SURE YOU ENTER YOUR PRIVATE KEY - REPLACE "YOUR PRIVATE KEY" IN USE STATE HOOK BELOW
   const [privateKey, setPrivateKey] = useState(
-    'a226ae7df24831ed1a6ccfebc5cc6fe23144941bd79ea91c588549cf56885550'
+    'YOUR PRIVATE KEY',
   );
   // declare local state variables using React useState hooks
   const [tokenAddress, setTokenAddress] = useState('');
