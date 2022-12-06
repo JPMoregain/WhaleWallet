@@ -15,9 +15,7 @@ function Header({ address, ethBalance, setPrivateKey }) {
         {address}
         <br />
         <h3>Balance</h3>
-        {ethBalance}
-        {' '}
-        ETH
+        {ethBalance} ETH
       </div>
       <div className="privKey">
         <input
@@ -29,10 +27,7 @@ function Header({ address, ethBalance, setPrivateKey }) {
             setNewKey(e.target.value);
           }}
         />
-        <button
-          type="submit"
-          onClick={() => updatePrivateKey()}
-        >
+        <button type="submit" onClick={() => updatePrivateKey()}>
           Save
         </button>
       </div>
